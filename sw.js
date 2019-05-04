@@ -8,16 +8,20 @@ const CACHE_NAME = "v1.0.0"
 this.addEventListener('install', async function() {
     const cache = await caches.open(CACHE_NAME);
     return cache.addAll([
-        '/',
-        '/index.html',
-        '/style.css',
-        '/configuration.css',
-        '/emulation.css',
-        '/main.js',
-        '/images/company.jpg',
-        '/images/ticket.jpg',
-        '/images/left-arrow.svg',
-        '/images/icons/icon-72x72.png',
+        './',
+        './index.html',
+        './style.css',
+        './configuration.css',
+        './emulation.css',
+        './main.js',
+        './images/company.jpg',
+        './images/ticket.jpg',
+        './images/left-arrow.svg',
+        './images/icons/icon-72x72.png',
+        './images/icons/icon-96х96.png',
+        './images/icons/icon-128х128.png',
+        './images/icons/icon-192х192.png',
+        './images/icons/icon-512х512.png',
     ])
 })
 
