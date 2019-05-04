@@ -8,20 +8,15 @@ const CACHE_NAME = "v1.0.0"
 this.addEventListener('install', async function() {
     const cache = await caches.open(CACHE_NAME);
     return cache.addAll([
-        './',
-        './index.html',
-        './style.css',
-        './configuration.css',
-        './emulation.css',
-        './main.js',
-        './images/company.jpg',
-        './images/ticket.jpg',
-        './images/left-arrow.svg',
-        './images/icons/icon-72x72.png',
-        './images/icons/icon-96х96.png',
-        './images/icons/icon-128х128.png',
-        './images/icons/icon-192х192.png',
-        './images/icons/icon-512х512.png',
+        '/public-transport-tickets/',
+        '/public-transport-tickets/index.html',
+        '/public-transport-tickets/style.css',
+        '/public-transport-tickets/configuration.css',
+        '/public-transport-tickets/emulation.css',
+        '/public-transport-tickets/main.js',
+        '/public-transport-tickets/images/company.jpg',
+        '/public-transport-tickets/images/ticket.jpg',
+        '/public-transport-tickets/images/left-arrow.svg',
     ])
 })
 

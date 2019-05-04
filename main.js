@@ -103,4 +103,3 @@ function makeSceneActive(frameEl){
 // To set focus on input element when page has loaded
 let wagonEl = document.getElementById('wagon')
 wagonEl.focus()
-
