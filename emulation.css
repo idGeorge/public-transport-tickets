@@ -1,0 +1,185 @@
+/* BTN
+ * ------- */
+.btn {
+    cursor: pointer;
+    border: 0;
+    background: white;
+    padding: 0;
+}
+.btn img {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+    border-radius: 5px;
+}
+.btn.btn--back{
+    width: 1.2em;
+    height: 1.2em;
+    background: url('images/left-arrow.svg') no-repeat center center;
+}
+
+/* HEADER
+ * --------------- */
+#emulation {
+    overflow: auto;
+}
+#emulation .header {
+    position: sticky; /* to make header above content*/
+    top: 0;
+    box-shadow: 1px 1px 3px #00000047;
+    background: white;
+    z-index: 1;
+}
+#emulation .header__title {
+    display: flex;
+    align-items: center;
+    font-size: 1.4em;
+    padding: 0.9em 0.9em 0.9em 0.8em;
+}
+#emulation .header__title .btn--back {
+    margin-right: 1.4em;
+}
+#emulation .header__nav { }
+#emulation .header__nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#emulation .header__nav ul li {
+    cursor: pointer;
+    font-size: 1em;
+    padding: 1em;
+    position: relative;
+    text-align: center;
+    width:50%;
+    color: grey;
+}
+#emulation .header__nav ul li.active {
+    color: var(--green);
+}
+#emulation .header__nav ul li.active::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.17em;
+    background: var(--green);
+}
+
+/* CONTENT OF
+   ---------- */
+.content {
+    background: #fafafa;
+    height: 100%;
+    padding: 0.7em;
+}
+
+/* TICKET
+ * ------ */
+.ticket {
+    padding: 1.2em;
+    margin-bottom: 1rem;
+    border-radius: 0.3em;
+    box-shadow: 0 2px 5px #00000029;
+    background: white;
+}
+
+.ticket .image {
+    border-radius: 0.4em;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+    flex-shrink: 0;
+}
+
+/* TICKET MODIFIERS
+ * ----------- */
+.ticket.is-used .image {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+.ticket.is-used * {
+    color: grey;
+}
+
+/* TICKET ELEMENTS
+ * ------------ */
+.ticket__header {
+    display: flex;
+}
+.ticket__header .ticket__company {
+    border: 4px solid white;
+    display: flex;
+    width: 4em;
+    height: 4em;
+    background: url('images/company.jpg') no-repeat right center;
+    background-size: contain;
+    margin-right: 0.7em;
+}
+.ticket__header .ticket__name {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.7em;
+}
+.ticket__header .ticket__name .series {
+    margin-left: 0.7em;
+}
+
+.ticket__image {
+    margin: 1.3em auto;
+    border: 6px solid white;
+    background: url('images/ticket.jpg') no-repeat right center;
+    width: 8.4em;
+    height: 8.4em;
+    background-size: contain;
+}
+
+.ticket__wagon {
+    margin: 1em;
+}
+.ticket__wagon .item {
+    text-align: center;
+}
+.ticket__wagon .item__title {
+    color: var(--grey);
+    font-size: 0.85em;
+}
+.ticket__wagon .item__value {
+    font-size: 2.3em;
+    margin-bottom: 0.1em;
+}
+
+.ticket__info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+.ticket__info .item {
+    text-align: center;
+    width: 31%;
+}
+.ticket__info .item__title {
+    font-size: 0.85em;
+    color: var(--grey);
+    margin-bottom: 0.2em;
+}
+.ticket__info .item__value {
+    font-size:1.2em;
+}
+
+.ticket__estimate {
+    margin-top: 1em;
+}
+.ticket__estimate .item {
+    text-align: center;
+    color: var(--green);
+}
+.ticket__estimate .item__title {
+    font-size: 0.75em;
+}
+.ticket__estimate .item__value {
+    margin-top: 0.5em;
+    font-size: 1.9em;
+    font-weight: 700;
+}
