@@ -16,6 +16,8 @@ configurationForm.addEventListener("submit", function(event) {
     config.wagonNumber = configurationForm.querySelector('#wagon').value
     prepareEmulationScene(config)
     makeSceneActive(emulationScene)
+    // This is "full-screen hack"
+    window.scrollTo(0,1);
 }, false)
 
 // INITIALIZATION OF EMULATION SCENE

@@ -19,7 +19,9 @@
     width: 100%;
     padding: 0 1em 0 1.5em;
     margin: 1em 0;
+    flex-shrink: 0;
 }
+
 #configuration .header__brand h1 {
     text-transform: uppercase;
     font-size: 2.2rem;
@@ -42,6 +44,7 @@
      height: 100%;
      background: #5B9B21;
  }
+
 #configuration .header__logo {
     flex: 1;
     height: 100%;
