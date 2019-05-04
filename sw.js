@@ -34,9 +34,9 @@ self.addEventListener('fetch', event => {
         console.log(`URL ${event.request.url}`, `location origin ${location}`)
 
         try {
-            //Try to get the cached response
+            //Try to get the cached response if not online
             const cachedResponse = await caches.match(event.request)
-            if (cachedResponse) {
+            if (cachedResponse && !navigator.onLine) {
                 //Return the cached response if present
                 console.log(`Cached response ${cachedResponse}`)
                 return cachedResponse
