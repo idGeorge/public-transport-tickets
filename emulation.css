@@ -33,11 +33,11 @@
 #emulation .header__title {
     display: flex;
     align-items: center;
-    font-size: 1.4em;
+    font-size: 1.25rem;
     padding: 0.9em 0.9em 0.9em 0.8em;
 }
-#emulation .header__title .btn--back {
-    margin-right: 1.4em;
+#emulation .header__title .btn {
+    margin-right: 1.4rem;
 }
 #emulation .header__nav { }
 #emulation .header__nav ul {
@@ -68,8 +68,9 @@
     background: var(--green);
 }
 
-/* CONTENT OF
-   ---------- */
+/* CONTENT
+ * Cards (tickets) are located here
+ * ----------- */
 .content {
     background: #fafafa;
     height: 100%;
@@ -79,7 +80,8 @@
 /* TICKET
  * ------ */
 .ticket {
-    padding: 1.2em;
+    padding: 1rem;
+    padding-bottom: 0.5em;
     margin-bottom: 1rem;
     border-radius: 0.3em;
     box-shadow: 0 2px 5px #00000029;
@@ -88,12 +90,12 @@
 
 .ticket .image {
     border-radius: 0.4em;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.09), 0px 0px 1px 0px rgba(0, 0, 0, 0.04);
     flex-shrink: 0;
 }
 
 /* TICKET MODIFIERS
- * ----------- */
+ * ----------------- */
 .ticket.is-used .image {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -103,15 +105,15 @@
 }
 
 /* TICKET ELEMENTS
- * ------------ */
+ * ----------------- */
 .ticket__header {
     display: flex;
 }
 .ticket__header .ticket__company {
     border: 4px solid white;
     display: flex;
-    width: 4em;
-    height: 4em;
+    width: 4.1rem;
+    height: 4.1rem;
     background: url('images/company.jpg') no-repeat right center;
     background-size: contain;
     margin-right: 0.7em;
@@ -120,23 +122,28 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
-    line-height: 1.7em;
+    padding-top: 0.2rem;
+    line-height: 1.2rem;
 }
+.ticket__header .ticket__name > div {
+    margin-bottom: 0.25rem;
+}
+
 .ticket__header .ticket__name .series {
-    margin-left: 0.7em;
+    margin-left: 0.4rem;
 }
 
 .ticket__image {
-    margin: 1.3em auto;
+    margin: 1rem auto;
     border: 6px solid white;
     background: url('images/ticket.jpg') no-repeat right center;
-    width: 8.4em;
-    height: 8.4em;
+    width: 8.2rem;
+    height: 8.2rem;
     background-size: contain;
 }
 
 .ticket__wagon {
-    margin: 1em;
+    margin: 1.1rem;
 }
 .ticket__wagon .item {
     text-align: center;
@@ -179,7 +186,8 @@
     font-size: 0.75em;
 }
 .ticket__estimate .item__value {
-    margin-top: 0.5em;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
     font-size: 1.9em;
     font-weight: 700;
 }
