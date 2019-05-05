@@ -1,6 +1,6 @@
 {
   "name": "Public Transport Ticket Emulator",
-  "short_name": "Tickets Emulator",
+  "short_name": "Ticket Emulator",
   "theme_color": "#f7f7f7",
   "background_color": "#5B9B21",
   "display": "standalone",
