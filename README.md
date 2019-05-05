@@ -1,7 +1,7 @@
 # Public Transport Ticket Emulator 🚎
 
-This *Progressive Web Application* can emulate 
-public transport tickets from **Privat24** mobile app.
+This *Progressive Web Application* was created to test the security of the ticketing system. \
+It emulates public transport tickets from **Privat24** mobile app.
 
 > Please, don't use it for illegal purpose!
 
