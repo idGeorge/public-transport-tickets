@@ -18,9 +18,9 @@
         }
         installServiceWorkerAsync()
     </script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="configuration.css">
-    <link rel="stylesheet" href="emulation.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/configuration.css">
+    <link rel="stylesheet" href="css/emulation.css">
     <link rel="icon" sizes="128x128" href="images/icons/icon-128x128.png">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="manifest" href="manifest.json">
@@ -39,7 +39,9 @@
                 </div>
             </div>
         </div>
-        <div class="ticket__image image"></div>
+        <div class="ticket__image image">
+            <img src="images/ticket.jpg" alt="ticket image">
+        </div>
         <div class="ticket__wagon">
             <div class="item">
                 <div class="item__value">№325</div>
@@ -87,23 +89,36 @@
             </div>
             <div class="row">
                 <label>How many tickets do you want?</label>
-                <div class="horizontal-radio-list">
-                    <label class="radio-block">
-                        <input type="radio" checked="checked" name="tickets" value="1">
-                        <span class="block">One</span>
-                    </label>
-                    <label class="radio-block">
-                        <input type="radio" name="tickets" value="2">
-                        <span class="block">Two</span>
-                    </label>
-                    <label class="radio-block">
-                        <input type="radio" name="tickets" value="3">
-                        <span class="block">Three</span>
-                    </label>
-                    <label class="radio-block">
-                        <input type="radio" name="tickets" value="4">
-                        <span class="block">Four</span>
-                    </label>
+                <div class="border">
+                    <div class="horizontal-radio-list">
+                        <label class="radio-block">
+                            <input type="radio" checked="checked" name="tickets" value="1">
+                            <span class="block">One</span>
+                        </label>
+                        <label class="radio-block">
+                            <input type="radio" name="tickets" value="2">
+                            <span class="block">Two</span>
+                        </label>
+                        <label class="radio-block">
+                            <input type="radio" name="tickets" value="3">
+                            <span class="block">Three</span>
+                        </label>
+                        <label class="radio-block">
+                            <input type="radio" name="tickets" value="4">
+                            <span class="block">Four</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="border border--small">
+                    <div class="radio-switch">
+                        <input type="radio" id="bus-switch-1" name="bus-switch" value="bus"/>
+                        <label for="bus-switch-1">BUS</label>
+                        <input type="radio" id="bus-switch-2" name="bus-switch" checked="checked" value="not a bus"/>
+                        <label for="bus-switch-2">NOT A BUS</label>
+                        <div class="background"></div>
+                    </div>
                 </div>
             </div>
             <div class="row">

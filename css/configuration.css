@@ -18,7 +18,7 @@
     align-items: center;
     width: 100%;
     padding: 0 1em 0 1.5em;
-    margin: 1em 0;
+    margin: 2em 0;
     flex-shrink: 0;
 }
 
@@ -30,26 +30,28 @@
     margin: 0;
     color: #5B9B21;
 }
+
 #configuration .header__brand h1 small {
     font-size: 1.5rem;
     color: #555;
     line-height: 1rem;
 }
+
 #configuration .header__brand::after {
-     position: absolute;
-     content: '';
-     left: 0;
-     top: 0;
-     width: 8px;
-     height: 100%;
-     background: #5B9B21;
- }
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background: #5B9B21;
+}
 
 #configuration .header__logo {
     flex: 1;
     height: 100%;
     margin-left: auto;
-    background: url("images/ticket.jpg") no-repeat right;
+    background: url("../images/ticket.jpg") no-repeat right;
     background-size: contain;
 }
 
@@ -105,12 +107,19 @@
     box-shadow: 0px 2px 2px #0000001f;
 }
 
+.configuration-form .row > .border {
+    padding: 20px;
+    background: #fbfbfb;
+    border: 1px solid #8080801c;
+}
+
+.configuration-form .row > .border--small {
+    padding: 10px 20px;
+}
+
 .horizontal-radio-list {
     display: flex;
     justify-content: center;
-    background: #fbfbfb;
-    padding: 20px;
-    border: 1px solid #8080801c;
 }
 
 .horizontal-radio-list .radio-block {
@@ -165,3 +174,53 @@
     color: white;
 }
 
+
+.radio-switch {
+    position: relative;
+    display: flex;
+    font-size: 1.05rem;
+}
+
+.radio-switch > input[type="radio"] {
+    width: 0;
+    opacity: 0;
+    margin: 0;
+}
+
+.radio-switch > label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    z-index: 1;
+    margin: 5px 0;
+    color: #333;
+}
+
+.radio-switch > label:not(:last-of-type) {
+    border-right: 1px solid #00000010;
+}
+
+.radio-switch > input:checked + label {
+    background: var(--green);
+    color: white;
+    margin: 0;
+    box-shadow: 0px 2px 2px #0000001f;
+    border-radius: var(--border-radius);
+    border: 1px solid #8080801c;
+}
+
+.radio-switch .background {
+    background: #fbfbfb;
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 2px 2px #0000001f;
+    border: 1px solid #0000000d;
+}

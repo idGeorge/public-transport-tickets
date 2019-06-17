@@ -10,12 +10,13 @@ this.addEventListener('install', async function() {
     return cache.addAll([
         '/public-transport-tickets/',
         '/public-transport-tickets/index.html',
-        '/public-transport-tickets/style.css',
-        '/public-transport-tickets/configuration.css',
-        '/public-transport-tickets/emulation.css',
         '/public-transport-tickets/main.js',
+        '/public-transport-tickets/css/style.css',
+        '/public-transport-tickets/css/configuration.css',
+        '/public-transport-tickets/css/emulation.css',
         '/public-transport-tickets/images/company.jpg',
         '/public-transport-tickets/images/ticket.jpg',
+        '/public-transport-tickets/images/ticket-bus.jpg',
         '/public-transport-tickets/images/left-arrow.svg',
     ])
 })
