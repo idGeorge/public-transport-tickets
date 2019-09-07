@@ -1,4 +1,4 @@
-const CACHE_NAME = "v1.0.0"
+const CACHE_NAME = "v1.1.0"
 
 /**
  * The install event is fired when the registration succeeds.
