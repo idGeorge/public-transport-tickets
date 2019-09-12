@@ -220,7 +220,7 @@ class PermanentStorage {
             return null
         }
         return {
-            wagonNumber: parseInt(localStorage.getItem('wagonNumber')),
+            wagonNumber: localStorage.getItem('wagonNumber'),
             isBus: JSON.parse(localStorage.getItem('isBus')),
             ticketAmount: parseInt(localStorage.getItem('ticketAmount')),
             ticketSeries: JSON.parse(localStorage.getItem('ticketSeries')),
