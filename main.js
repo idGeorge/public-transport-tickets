@@ -274,7 +274,7 @@ class AppLock {
         this._lockEl.style.display = 'block'
     }
 
-    unlock(password){
+    unlock(){
         this._lockEl.style.display = 'none'
     }
 }
