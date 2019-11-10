@@ -33,6 +33,15 @@
 
 	  gtag('config', 'UA-134982632-2');
 	</script>
+    <script>
+        window.onerror = function(msg, url, line, col, error) {
+            var extra = !col ? '' : '\ncolumn: ' + col;
+            extra += !error ? '' : '\nerror: ' + error;
+            alert("Error: " + msg + "\nurl: " + url + "\nline: " + line + extra)
+
+            return true
+        }
+    </script>
 </head>
 <body>
 <template id="ticket-template">
@@ -79,6 +88,25 @@
         </div>
     </div>
 </template>
+<div class="app-lock" id="lock" style="display: none">
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__header">
+                Application is locked
+            </div>
+            <div class="modal__body">
+                <p>Enter your password</p>
+                <div style="width: 185px; margin-bottom: 2rem;">
+                    <input type="password" id="password">
+                </div>
+                <p>
+                    Have no password? <br/>
+                    <b><a href="mailto: kovart.public@gmail.com">kovart.public@gmail.com</a></b>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="app">
     <section id="configuration" class="scene is-active">
         <header class="header">

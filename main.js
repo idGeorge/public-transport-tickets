@@ -16,7 +16,9 @@ class App {
         lastEmulationTime: null
     }
 
-    constructor() {
+    constructor() {}
+
+    initialize(){
         this.configurationScene = document.getElementById('configuration')
         this.emulationScene = document.getElementById('emulation')
         this.ticketTemplate = document.querySelector('#ticket-template').content
@@ -237,11 +239,79 @@ class PermanentStorage {
     }
 }
 
+class AppLock {
+    _hashes = [
+        2002114038,
+        -367436261,
+        809399193,
+        -909706894,
+        -896178118,
+        -896178117,
+        -896178116,
+        -896178115,
+        -896178114
+    ]
+
+    constructor() {
+        this._lockEl = document.getElementById('lock')
+        this._passwordEl = document.getElementById('password')
+        this._passwordEl.addEventListener('input', () => {
+            let isValid = this.checkPassword(this._passwordEl.value)
+            if(!isValid) return
+            this.unlock()
+            localStorage.setItem('password', this._passwordEl.value)
+            Utils.addUrlParameter({param: 'password', value: this._passwordEl.value})
+        })
+    }
+
+    checkPassword(password){
+        password = password || ''
+        let hash = password.hashCode()
+        return this._hashes.indexOf(hash) !== -1;
+    }
+
+    lock(){
+        this._lockEl.style.display = 'block'
+    }
+
+    unlock(password){
+        this._lockEl.style.display = 'none'
+    }
+}
+
+// https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript
+String.prototype.hashCode = function() {
+    let hash = 0, i, chr;
+    if (this.length === 0) return hash;
+    for (i = 0; i < this.length; i++) {
+        chr   = this.charCodeAt(i);
+        hash  = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+}
+
 const Utils = {
     // from min (inclusive) to max (inclusive)
-    random(min, max) {
+    random: function(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min
+    },
+    addUrlParameter: function ({param, value}) {
+        if(window.location.href.indexOf('?') === -1) {
+            window.location.href = window.location.href + '?' + param + '=' + value
+        } else if(window.location.href.indexOf(param) === -1) {
+            window.location.href = window.location.href + '&' + param + '=' + value
+        }
     }
 }
 
 let app = new App()
+app.initialize()
+
+const appLocker = new AppLock()
+let storedPassword = localStorage.getItem('password')
+if(!(storedPassword && appLocker.checkPassword(storedPassword))) {
+    appLocker.lock()
+}
+
+if(storedPassword) Utils.addUrlParameter({param: 'password', value: storedPassword})
